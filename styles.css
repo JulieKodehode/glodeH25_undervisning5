@@ -1,7 +1,8 @@
 body {
-  margin: 0;
+  margin: 0; /* 0 er nøytral og trenger ikke målenhet */
 }
 
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -14,8 +15,15 @@ nav {
   gap: 16px;
 }
 
+.logo {
+  height: 32px;
+  width: 32px;
+  background-color: white;
+}
+
+/* MAIN */
 section {
-  height: 100vh;
+  height: 100vh; /* vh registrerer hvor stor skjermen til enheten er (vw gjelder samme regel) */
 }
 
 img {
@@ -24,19 +32,31 @@ img {
   background-color: grey;
 }
 
+/* HERO */
 .hero {
+  width: 100%; /* Ikke nødvendig å ha med. Kun for visuell foreståelse av koden. */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px; /* Gap = mellomrom mellom to eller flere element */
 }
 
+.heroText {
+  width: 50%;
+}
+
+.heroImage {
+  width: 50%;
+}
+
+/* ABOUT */
 .about {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* PROJECTS */
 .projects {
   display: flex;
   align-items: center;
@@ -51,10 +71,38 @@ img {
   justify-content: center;
   width: 300px;
   border: 1px solid black;
+  height: 400px;
 }
 
-.logo {
-  height: 32px;
-  width: 32px;
-  background-color: white;
+/* FOOTER */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MEDIA QUERY */
+@media (max-width: 426px) {
+  /* Om skjermen er mindre enn 426px brukes CSS inne i @media istedenfor CSS utenfor */
+  body {
+    background-color: red;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+  }
+
+  .projects {
+    flex-direction: column;
+    height: 100%;
+  }
+
+
+
+
+
 }
